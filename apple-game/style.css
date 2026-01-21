@@ -123,7 +123,7 @@ header h1 {
 
 .game-board {
     display: grid;
-    grid-template-columns: repeat(10, 1fr);
+    grid-template-columns: repeat(5, 1fr);
     gap: 5px;
     user-select: none;
 }
@@ -305,7 +305,7 @@ header h1 {
     }
 
     .game-board {
-        grid-template-columns: repeat(10, 1fr);
+        grid-template-columns: repeat(5, 1fr);
         gap: 3px;
     }
 
@@ -334,6 +334,6 @@ header h1 {
 
 @media (max-width: 400px) {
     .game-board {
-        grid-template-columns: repeat(8, 1fr);
+        grid-template-columns: repeat(5, 1fr);
     }
 }

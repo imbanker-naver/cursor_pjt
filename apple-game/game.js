@@ -1,8 +1,8 @@
 class AppleGame {
     constructor() {
         this.board = [];
-        this.rows = 10;
-        this.cols = 10;
+        this.rows = 5;
+        this.cols = 5;
         this.score = 0;
         this.timeLeft = 60;
         this.isPlaying = false;
