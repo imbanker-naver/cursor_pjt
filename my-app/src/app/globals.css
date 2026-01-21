@@ -1,26 +1,85 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  color-scheme: dark;
+  --background: #0b0d13;
+  --surface: #0f1423;
+  --card: #12192b;
+  --foreground: #e7ecf5;
+  --muted: #9ea6b8;
+  --border: #1e2535;
+  --accent: #5b8dff;
+  --accent-strong: #2563eb;
+  --button-bg: #1a2133;
+  --button-hover: #22304a;
+  --shadow-card: 0 24px 64px rgba(0, 0, 0, 0.55);
+  --shadow-soft: 0 10px 30px rgba(0, 0, 0, 0.25);
+  --input-bg: #0f1423;
+  --overlay: rgba(0, 0, 0, 0.6);
+  --danger: #ef4444;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+:root[data-theme="light"] {
+  color-scheme: light;
+  --background: #f5f7fb;
+  --surface: #f9fafb;
+  --card: #ffffff;
+  --foreground: #0f172a;
+  --muted: #4b5563;
+  --border: #dce0ea;
+  --accent: #2563eb;
+  --accent-strong: #1d4ed8;
+  --button-bg: #eef2ff;
+  --button-hover: #e0e7ff;
+  --shadow-card: 0 24px 64px rgba(15, 23, 42, 0.08);
+  --shadow-soft: 0 10px 30px rgba(15, 23, 42, 0.06);
+  --input-bg: #ffffff;
+  --overlay: rgba(15, 23, 42, 0.6);
+  --danger: #ef4444;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+:root[data-theme="dark"] {
+  color-scheme: dark;
+}
+
+* {
+  box-sizing: border-box;
 }
 
 body {
+  margin: 0;
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-geist-sans, system-ui, -apple-system, "Inter", sans-serif);
+  transition: background-color 150ms ease, color 150ms ease;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  font: inherit;
+}
+
+input {
+  font: inherit;
+}
+
+input::placeholder {
+  color: var(--muted);
+}
+
+.focus-ring:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    scroll-behavior: auto;
+    transition: none !important;
+    animation-duration: 0.01ms !important;
+  }
 }
